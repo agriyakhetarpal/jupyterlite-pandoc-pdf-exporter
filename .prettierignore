@@ -4,3 +4,11 @@ node_modules
 **/package.json
 !/package.json
 jupyterlite_pandoc_pdf_exporter
+venv
+.venv
+env
+.env
+**/venv
+**/.venv
+**/env
+**/.env
