@@ -10,20 +10,32 @@ import { ISettingRegistry } from '@jupyterlab/settingregistry';
  */
 const plugin: JupyterFrontEndPlugin<void> = {
   id: 'jupyterlite-pandoc-pdf-exporter:plugin',
-  description: 'A PDF exporter for JupyterLite based on a WebAssembly distribution of Pandoc',
+  description:
+    'A PDF exporter for JupyterLite based on a WebAssembly distribution of Pandoc',
   autoStart: true,
   optional: [ISettingRegistry],
-  activate: (app: JupyterFrontEnd, settingRegistry: ISettingRegistry | null) => {
-    console.log('JupyterLab extension jupyterlite-pandoc-pdf-exporter is activated!');
+  activate: (
+    app: JupyterFrontEnd,
+    settingRegistry: ISettingRegistry | null
+  ) => {
+    console.log(
+      'JupyterLab extension jupyterlite-pandoc-pdf-exporter is activated!'
+    );
 
     if (settingRegistry) {
       settingRegistry
         .load(plugin.id)
         .then(settings => {
-          console.log('jupyterlite-pandoc-pdf-exporter settings loaded:', settings.composite);
+          console.log(
+            'jupyterlite-pandoc-pdf-exporter settings loaded:',
+            settings.composite
+          );
         })
         .catch(reason => {
-          console.error('Failed to load settings for jupyterlite-pandoc-pdf-exporter.', reason);
+          console.error(
+            'Failed to load settings for jupyterlite-pandoc-pdf-exporter.',
+            reason
+          );
         });
     }
   }
