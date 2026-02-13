@@ -1,6 +1,6 @@
 {
     "name": "jupyterlite-pandoc-pdf-exporter",
-    "version": "0.1.0",
+    "version": "0.0.1",
     "description": "A PDF exporter for JupyterLite based on a WebAssembly distribution of Pandoc",
     "keywords": [
         "jupyter",
