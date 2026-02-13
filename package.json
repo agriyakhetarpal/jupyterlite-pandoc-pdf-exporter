@@ -57,11 +57,8 @@
         "watch:labextension": "jupyter labextension watch ."
     },
     "dependencies": {
-        "@jupyterlab/application": "^4.5.4",
-        "@jupyterlab/apputils": "^4.6.4",
-        "@jupyterlab/mainmenu": "^4.5.4",
-        "@jupyterlab/notebook": "^4.5.4",
         "@jupyterlab/services": "^7.5.4",
+        "@jupyterlite/services": "^0.7.1",
         "@myriaddreamin/typst-all-in-one.ts": "0.7.0-rc2",
         "pandoc-wasm": "1.0.1"
     },
@@ -107,7 +104,13 @@
     "jupyterlab": {
         "extension": true,
         "outputDir": "jupyterlite_pandoc_pdf_exporter/labextension",
-        "webpackConfig": "./webpack.config.js"
+        "webpackConfig": "./webpack.config.js",
+        "sharedPackages": {
+            "@jupyterlite/services": {
+                "bundled": false,
+                "singleton": true
+            }
+        }
     },
     "eslintIgnore": [
         "node_modules",
