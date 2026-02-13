@@ -2,7 +2,8 @@
 
 [![Github Actions Status](https://github.com/agriyakhetarpal/jupyterlite-pandoc-pdf-exporter/workflows/Build/badge.svg)](https://github.com/agriyakhetarpal/jupyterlite-pandoc-pdf-exporter/actions/workflows/build.yml)
 
-A PDF exporter for JupyterLite based on a WebAssembly distribution of Pandoc
+A serverless PDF exporter for JupyterLite based on WebAssembly distributions of Pandoc and Typst. This mono-plugin extension registers a
+PDF exporter with [JupyterLite's `INbConvertExporters` interface](https://jupyterlite.readthedocs.io/en/stable/howto/extensions/custom-exporters.html).
 
 ## Requirements
 
