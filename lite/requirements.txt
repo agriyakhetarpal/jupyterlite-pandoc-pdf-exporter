@@ -1,3 +1,2 @@
-# TODO: pin these later
-jupyterlite
-jupyterlite-pyodide-kernel
+jupyterlite==0.7.1
+jupyterlite-pyodide-kernel==0.7.0
