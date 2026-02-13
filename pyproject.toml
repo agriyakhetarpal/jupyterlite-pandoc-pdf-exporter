@@ -22,6 +22,9 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: 3.14",
 ]
+authors = [
+    { name = "Agriya Khetarpal" },
+]
 dependencies = [
 ]
 dynamic = ["version", "description", "authors", "urls", "keywords"]
