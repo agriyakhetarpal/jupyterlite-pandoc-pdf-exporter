@@ -105,12 +105,6 @@
         "extension": true,
         "outputDir": "jupyterlite_pandoc_pdf_exporter/labextension",
         "webpackConfig": "./webpack.config.js",
-        // N.B. if @jupyterlite/services is being bundled separately into our extension,
-        // the INbConvertExporters token is different object from the one in JupyterLite
-        // core. The plugin system uses object identity to match tokens, so the requirement
-        // can never be satisfied, and that causes the service manager initialisation to
-        // fail + the Pyodide kernel connection is broken. So this tells the builder to
-        // use the host app's copy of the package instead of bundling its own.
         "sharedPackages": {
             "@jupyterlite/services": {
                 "bundled": false,
