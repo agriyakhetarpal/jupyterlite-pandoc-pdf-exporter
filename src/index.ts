@@ -1,43 +1,71 @@
+// Copyright (c) Agriya Khetarpal
+// SPDX-License-Identifier: BSD-3-Clause
+
 import {
   JupyterFrontEnd,
   JupyterFrontEndPlugin
 } from '@jupyterlab/application';
 
-import { ISettingRegistry } from '@jupyterlab/settingregistry';
+import { INotebookTracker } from '@jupyterlab/notebook';
+
+import { IMainMenu } from '@jupyterlab/mainmenu';
+
+import { exportNotebookAsPdf } from './pdf';
+
+const COMMAND_ID = 'jupyterlite-pandoc-pdf-exporter:export';
 
 /**
- * Initialization data for the jupyterlite-pandoc-pdf-exporter extension.
+ * A JupyterFrontEndPlugin that adds a "PDF via Pandoc" export
+ * command to the File menu.
+ * TODO: this is only temporary until I can figure out how to add
+ * a proper exporter to the notebook's export menu under the File
+ * menu tab, which is not working due to some mis-interaction with
+ * the Pyodide kernel.
  */
 const plugin: JupyterFrontEndPlugin<void> = {
   id: 'jupyterlite-pandoc-pdf-exporter:plugin',
   description:
     'A PDF exporter for JupyterLite based on a WebAssembly distribution of Pandoc',
   autoStart: true,
-  optional: [ISettingRegistry],
+  requires: [INotebookTracker, IMainMenu],
   activate: (
     app: JupyterFrontEnd,
-    settingRegistry: ISettingRegistry | null
-  ) => {
-    console.log(
-      'JupyterLab extension jupyterlite-pandoc-pdf-exporter is activated!'
-    );
+    tracker: INotebookTracker,
+    mainMenu: IMainMenu
+  ): void => {
+    app.commands.addCommand(COMMAND_ID, {
+      label: 'Export Notebook to PDF via Pandoc',
+      isEnabled: () => tracker.currentWidget !== null,
+      execute: async () => {
+        const panel = tracker.currentWidget;
+        if (!panel) {
+          return;
+        }
+        await panel.context.save();
+        const model = panel.context.contentsModel;
+        if (!model) {
+          return;
+        }
+        try {
+          await exportNotebookAsPdf(panel.context.model.toJSON(), model.path);
+        } catch (error: any) {
+          console.error('PDF export failed:', error);
+          await app.commands.execute('apputils:notify', {
+            message: `PDF export failed: ${error.message}`,
+            type: 'error'
+          });
+        }
+      }
+    });
 
-    if (settingRegistry) {
-      settingRegistry
-        .load(plugin.id)
-        .then(settings => {
-          console.log(
-            'jupyterlite-pandoc-pdf-exporter settings loaded:',
-            settings.composite
-          );
-        })
-        .catch(reason => {
-          console.error(
-            'Failed to load settings for jupyterlite-pandoc-pdf-exporter.',
-            reason
-          );
-        });
-    }
+    mainMenu.fileMenu.addItem({
+      command: COMMAND_ID,
+      rank: 70
+    });
+
+    console.log(
+      'jupyterlite-pandoc-pdf-exporter: PDF via Pandoc command has been registered'
+    );
   }
 };
 
