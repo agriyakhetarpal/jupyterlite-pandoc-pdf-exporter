@@ -27,7 +27,7 @@ authors = [
 ]
 dependencies = [
 ]
-dynamic = ["version", "description", "authors", "urls", "keywords"]
+dynamic = ["version", "description", "urls", "keywords"]
 
 [tool.hatch.version]
 source = "nodejs"
