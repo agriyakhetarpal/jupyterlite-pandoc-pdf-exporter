@@ -99,7 +99,7 @@ jobs:
       - name: Build wheel
         run: |
           set -eux
-          pipx run build --wheel --output-dir wheelhouse
+          pipx run build --wheel --outdir wheelhouse
 
       - name: Install JupyterLite
         run: pip install -r lite/requirements.txt
