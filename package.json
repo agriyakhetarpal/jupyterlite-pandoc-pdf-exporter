@@ -38,19 +38,17 @@
         "build:lib:prod": "tsc",
         "clean": "jlpm clean:lib",
         "clean:lib": "rimraf lib tsconfig.tsbuildinfo",
-        "clean:lintcache": "rimraf .eslintcache .stylelintcache",
+        "clean:lintcache": "rimraf .eslintcache",
         "clean:labextension": "rimraf jupyterlite_pandoc_pdf_exporter/labextension jupyterlite_pandoc_pdf_exporter/_version.py",
         "clean:all": "jlpm clean:lib && jlpm clean:labextension && jlpm clean:lintcache",
         "eslint": "jlpm eslint:check --fix",
         "eslint:check": "eslint . --cache --ext .ts,.tsx",
         "install:extension": "jlpm build",
-        "lint": "jlpm stylelint && jlpm prettier && jlpm eslint",
-        "lint:check": "jlpm stylelint:check && jlpm prettier:check && jlpm eslint:check",
+        "lint": "jlpm prettier && jlpm eslint",
+        "lint:check": "jlpm prettier:check && jlpm eslint:check",
         "prettier": "jlpm prettier:base --write --list-different",
         "prettier:base": "prettier \"**/*{.ts,.tsx,.js,.jsx,.css,.json,.md}\"",
         "prettier:check": "jlpm prettier:base --check",
-        "stylelint": "jlpm stylelint:check --fix",
-        "stylelint:check": "stylelint --cache \"style/**/*.css\"",
         "test": "jest --coverage",
         "watch": "run-p watch:src watch:labextension",
         "watch:src": "tsc -w --sourceMap",
@@ -70,10 +68,10 @@
         "@types/json-schema": "^7.0.15",
         "@types/react": "^19.2.14",
         "@types/react-addons-linked-state-mixin": "^0.14.27",
-        "@typescript-eslint/eslint-plugin": "^6.1.0",
-        "@typescript-eslint/parser": "^6.1.0",
+        "@typescript-eslint/eslint-plugin": "^7.0.0",
+        "@typescript-eslint/parser": "^7.0.0",
         "css-loader": "^6.7.1",
-        "eslint": "^10.0.0",
+        "eslint": "8.57.1",
         "eslint-config-prettier": "^8.8.0",
         "eslint-plugin-prettier": "^5.0.0",
         "jest": "^29.2.0",
@@ -82,11 +80,6 @@
         "rimraf": "^6.1.2",
         "source-map-loader": "^1.0.2",
         "style-loader": "^3.3.1",
-        "stylelint": "^17.2.0",
-        "stylelint-config-recommended": "^13.0.0",
-        "stylelint-config-standard": "^34.0.0",
-        "stylelint-csstree-validator": "^3.0.0",
-        "stylelint-prettier": "^4.0.0",
         "typescript": "~5.5.4",
         "yjs": "^13.5.0"
     },
@@ -188,22 +181,5 @@
                 }
             }
         ]
-    },
-    "stylelint": {
-        "extends": [
-            "stylelint-config-recommended",
-            "stylelint-config-standard",
-            "stylelint-prettier/recommended"
-        ],
-        "plugins": [
-            "stylelint-csstree-validator"
-        ],
-        "rules": {
-            "csstree/validator": true,
-            "property-no-vendor-prefix": null,
-            "selector-class-pattern": "^([a-z][A-z\\d]*)(-[A-z\\d]+)*$",
-            "selector-no-vendor-prefix": null,
-            "value-no-vendor-prefix": null
-        }
     }
 }
