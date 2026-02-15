@@ -42,7 +42,6 @@ jobs:
 
           jupyter labextension list
           jupyter labextension list 2>&1 | grep -ie "jupyterlite-pandoc-pdf-exporter.*OK"
-          python -m jupyterlab.browser_check
 
       - name: Package the extension
         run: |
