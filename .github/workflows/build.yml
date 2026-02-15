@@ -101,8 +101,11 @@ jobs:
           set -eux
           pipx run build --wheel --outdir wheelhouse
 
-      - name: Install JupyterLite
-        run: pip install -r lite/requirements.txt
+      - name: Install JupyterLite and extension dependencies
+        run: |
+          set -eux
+          pip install -r lite/requirements.txt
+          pip install wheelhouse/*.whl
 
       - name: Build JupyterLite
         run: |
