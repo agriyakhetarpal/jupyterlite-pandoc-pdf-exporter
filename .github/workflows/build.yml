@@ -136,6 +136,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: dist
           commit_message: 'Publish JupyterLite distribution for commit ${{ github.event.head_commit.message }}'
+          force_orphan: true
 
   # integration-tests:
   #   name: Integration tests
