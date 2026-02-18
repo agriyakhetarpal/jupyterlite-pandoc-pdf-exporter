@@ -110,7 +110,7 @@ jobs:
       - name: Build JupyterLite
         run: |
           set -eux
-          jupyter lite build --lite-dir=lite --output-dir=dist
+          jupyter lite build --lite-dir=lite --contents=notebooks --output-dir=dist
 
       - name: Upload JupyterLite distribution
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
