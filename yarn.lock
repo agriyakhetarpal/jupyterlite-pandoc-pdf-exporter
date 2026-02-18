@@ -7701,8 +7701,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "jupyterlite-pandoc-pdf-exporter@workspace:."
   dependencies:
+    "@jupyterlab/application": ^4.5.4
     "@jupyterlab/builder": ^4.5.4
     "@jupyterlab/services": ^7.5.4
+    "@jupyterlab/statusbar": ^4.5.4
     "@jupyterlab/testutils": ^4.5.4
     "@jupyterlite/services": ^0.7.1
     "@myriaddreamin/typst-all-in-one.ts": 0.7.0-rc2
