@@ -106,7 +106,6 @@ jobs:
           set -eux
           pip install -r lite/requirements.txt
           pip install wheelhouse/*.whl
-          pip install jupyterlab
 
       - name: Build JupyterLite
         run: |
