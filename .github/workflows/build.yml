@@ -84,7 +84,7 @@ jobs:
           sudo rm -rf $(which node)
           sudo rm -rf $(which node)
 
-          pip install "jupyterlab>=4.0.0,<5" jupyterlite-pdf-exporter*.whl
+          pip install "jupyterlab>=4.0.0,<5" jupyterlite_pdf_exporter*.whl
 
 
           jupyter labextension list
