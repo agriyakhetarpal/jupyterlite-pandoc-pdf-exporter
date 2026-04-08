@@ -54,7 +54,7 @@ jobs:
 
           pip install build
           python -m build
-          pip uninstall -y "jupyterlite_pandoc_pdf_exporter" jupyterlab
+          pip uninstall -y "jupyterlite-pandoc-pdf-exporter" jupyterlab
 
       - name: Upload extension packages
         uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
@@ -80,11 +80,11 @@ jobs:
       - name: Install and Test
         run: |
           set -eux
-          # Remove NodeJS, twice to take care of system and locally installed node versions.
+          # Remove Node.js, twice to take care of system and locally installed node versions.
           sudo rm -rf $(which node)
           sudo rm -rf $(which node)
 
-          pip install "jupyterlab>=4.0.0,<5" jupyterlite_pandoc_pdf_exporter*.whl
+          pip install "jupyterlab>=4.0.0,<5" jupyterlite-pandoc-pdf-exporter*.whl
 
 
           jupyter labextension list
