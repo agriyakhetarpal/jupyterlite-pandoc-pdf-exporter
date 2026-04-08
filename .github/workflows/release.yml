@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: pypi
-      url: https://pypi.org/p/jupyterlite-pandoc-pdf-exporter
+      url: https://pypi.org/p/jupyterlite-pdf-exporter
     permissions:
       id-token: write # for OIDC trusted publishing
 

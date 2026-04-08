@@ -1,5 +1,5 @@
 {
-    "name": "jupyterlite-pandoc-pdf-exporter",
+    "name": "jupyterlite-pdf-exporter",
     "version": "0.1.0",
     "description": "A PDF exporter for JupyterLite based on a WebAssembly distribution of Pandoc",
     "keywords": [
@@ -7,9 +7,9 @@
         "jupyterlab",
         "jupyterlab-extension"
     ],
-    "homepage": "https://github.com/agriyakhetarpal/jupyterlite-pandoc-pdf-exporter",
+    "homepage": "https://github.com/agriyakhetarpal/jupyterlite-pdf-exporter",
     "bugs": {
-        "url": "https://github.com/agriyakhetarpal/jupyterlite-pandoc-pdf-exporter/issues"
+        "url": "https://github.com/agriyakhetarpal/jupyterlite-pdf-exporter/issues"
     },
     "license": "GPL-2.0-or-later",
     "author": {
@@ -29,7 +29,7 @@
     "style": "style/index.css",
     "repository": {
         "type": "git",
-        "url": "https://github.com/agriyakhetarpal/jupyterlite-pandoc-pdf-exporter.git"
+        "url": "https://github.com/agriyakhetarpal/jupyterlite-pdf-exporter.git"
     },
     "scripts": {
         "build": "jlpm build:lib && jlpm build:labextension:dev",
@@ -41,7 +41,7 @@
         "clean": "jlpm clean:lib",
         "clean:lib": "rimraf lib tsconfig.tsbuildinfo",
         "clean:lintcache": "rimraf .eslintcache",
-        "clean:labextension": "rimraf jupyterlite_pandoc_pdf_exporter/labextension jupyterlite_pandoc_pdf_exporter/_version.py",
+        "clean:labextension": "rimraf jupyterlite_pdf_exporter/labextension jupyterlite_pdf_exporter/_version.py",
         "clean:all": "jlpm clean:lib && jlpm clean:labextension && jlpm clean:lintcache",
         "install:extension": "jlpm build",
         "test": "jest --coverage",
@@ -103,7 +103,7 @@
     },
     "jupyterlab": {
         "extension": true,
-        "outputDir": "jupyterlite_pandoc_pdf_exporter/labextension",
+        "outputDir": "jupyterlite_pdf_exporter/labextension",
         "webpackConfig": "./webpack.config.js",
         "sharedPackages": {
             "@jupyterlite/services": {

@@ -1,14 +1,14 @@
-# `jupyterlite-pandoc-pdf-exporter`
+# `jupyterlite-pdf-exporter`
 
-[![Github Actions build status](https://github.com/agriyakhetarpal/jupyterlite-pandoc-pdf-exporter/workflows/Build/badge.svg)](https://github.com/agriyakhetarpal/jupyterlite-pandoc-pdf-exporter/actions/workflows/build.yml)
-[![Try PDF exporter in JupyterLite](https://jupyterlite.rtfd.io/en/latest/_static/badge.svg)](https://agriyakhetarp.al/jupyterlite-pandoc-pdf-exporter/)
+[![Github Actions build status](https://github.com/agriyakhetarpal/jupyterlite-pdf-exporter/workflows/Build/badge.svg)](https://github.com/agriyakhetarpal/jupyterlite-pdf-exporter/actions/workflows/build.yml)
+[![Try PDF exporter in JupyterLite](https://jupyterlite.rtfd.io/en/latest/_static/badge.svg)](https://agriyakhetarp.al/jupyterlite-pdf-exporter/)
 
 A serverless PDF exporter for JupyterLite based on WebAssembly distributions of Pandoc and Typst. This JupyterLite extension registers a
 PDF exporter with [JupyterLite's `INbConvertExporters` interface](https://jupyterlite.readthedocs.io/en/stable/howto/extensions/custom-exporters.html).
 
 ## Usage
 
-- Install this extension in your JupyterLite deployment via `pip install jupyterlite-pandoc-pdf-exporter` and rebuild your JupyterLite distribution.
+- Install this extension in your JupyterLite deployment via `pip install jupyterlite-pdf-exporter` and rebuild your JupyterLite distribution.
 - Open a notebook in JupyterLite, click on the "File" menu, and select "Save and Export Notebook As" > "PDF (via Pandoc)". The PDF file will be downloaded to your local machine at a location of your choice.
 
 ## Requirements
@@ -22,7 +22,7 @@ PDF exporter with [JupyterLite's `INbConvertExporters` interface](https://jupyte
 To install the extension into your JupyterLite deployment, execute:
 
 ```bash
-pip install jupyterlite-pandoc-pdf-exporter
+pip install jupyterlite-pdf-exporter
 ```
 
 and rebuild your JupyterLite distribution.
@@ -32,7 +32,7 @@ and rebuild your JupyterLite distribution.
 To remove the extension from your JupyterLite deployment, execute:
 
 ```bash
-pip uninstall jupyterlite-pandoc-pdf-exporter
+pip uninstall jupyterlite-pdf-exporter
 ```
 
 and rebuild your JupyterLite distribution.

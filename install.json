@@ -1,5 +1,5 @@
 {
   "packageManager": "python",
-  "packageName": "jupyterlite-pandoc-pdf-exporter",
-  "uninstallInstructions": "Use your Python package manager (pip, conda, etc.) to uninstall the package jupyterlite-pandoc-pdf-exporter"
+  "packageName": "jupyterlite-pdf-exporter",
+  "uninstallInstructions": "Use your Python package manager (pip, conda, etc.) to uninstall the package jupyterlite-pdf-exporter"
 }

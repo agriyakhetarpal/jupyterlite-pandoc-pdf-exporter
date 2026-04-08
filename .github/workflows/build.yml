@@ -46,7 +46,7 @@ jobs:
           python -m pip install .[test]
 
           jupyter labextension list
-          jupyter labextension list 2>&1 | grep -ie "jupyterlite-pandoc-pdf-exporter.*OK"
+          jupyter labextension list 2>&1 | grep -ie "jupyterlite-pdf-exporter.*OK"
 
       - name: Package the extension
         run: |
@@ -54,13 +54,13 @@ jobs:
 
           pip install build
           python -m build
-          pip uninstall -y "jupyterlite-pandoc-pdf-exporter" jupyterlab
+          pip uninstall -y "jupyterlite-pdf-exporter" jupyterlab
 
       - name: Upload extension packages
         uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
         with:
           name: extension-artifacts
-          path: dist/jupyterlite_pandoc_pdf_exporter*
+          path: dist/jupyterlite_pdf_exporter*
           if-no-files-found: error
 
   test_isolated:
@@ -84,11 +84,11 @@ jobs:
           sudo rm -rf $(which node)
           sudo rm -rf $(which node)
 
-          pip install "jupyterlab>=4.0.0,<5" jupyterlite-pandoc-pdf-exporter*.whl
+          pip install "jupyterlab>=4.0.0,<5" jupyterlite-pdf-exporter*.whl
 
 
           jupyter labextension list
-          jupyter labextension list 2>&1 | grep -ie "jupyterlite-pandoc-pdf-exporter.*OK"
+          jupyter labextension list 2>&1 | grep -ie "jupyterlite-pdf-exporter.*OK"
           python -m jupyterlab.browser_check --no-browser-test
 
   build_jupyterlite:
@@ -171,7 +171,7 @@ jobs:
   #   - name: Install the extension
   #     run: |
   #       set -eux
-  #       python -m pip install "jupyterlab>=4.0.0,<5" jupyterlite_pandoc_pdf_exporter*.whl
+  #       python -m pip install "jupyterlab>=4.0.0,<5" jupyterlite_pdf_exporter*.whl
 
   #   - name: Install dependencies
   #     working-directory: ui-tests
@@ -203,7 +203,7 @@ jobs:
   #     if: always()
   #     uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f # v7.0.0
   #     with:
-  #       name: jupyterlite_pandoc_pdf_exporter-playwright-tests
+  #       name: jupyterlite_pdf_exporter-playwright-tests
   #       path: |
   #         ui-tests/test-results
   #         ui-tests/playwright-report

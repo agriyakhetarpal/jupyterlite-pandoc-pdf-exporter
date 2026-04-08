@@ -10,7 +10,7 @@ The `jlpm` command is JupyterLab's pinned version of
 
 ```bash
 # Clone the repo to your local environment
-# Change directory to the jupyterlite_pandoc_pdf_exporter directory
+# Change directory to the jupyterlite_pdf_exporter directory
 
 # Set up a virtual environment and install package in development mode
 python -m venv .venv
@@ -46,12 +46,12 @@ jupyter lab build --minimize=False
 ### Development uninstall
 
 ```bash
-pip uninstall jupyterlite-pandoc-pdf-exporter
+pip uninstall jupyterlite-pdf-exporter
 ```
 
 In development mode, you will also need to remove the symlink created by `jupyter labextension develop`
 command. To find its location, you can run `jupyter labextension list` to figure out where the `labextensions`
-folder is located. Then you can remove the symlink named `jupyterlite-pandoc-pdf-exporter` within that folder.
+folder is located. Then you can remove the symlink named `jupyterlite-pdf-exporter` within that folder.
 
 ### Testing the extension
 
