@@ -1,6 +1,6 @@
 {
     "name": "jupyterlite-pandoc-pdf-exporter",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "description": "A PDF exporter for JupyterLite based on a WebAssembly distribution of Pandoc",
     "keywords": [
         "jupyter",
@@ -11,7 +11,7 @@
     "bugs": {
         "url": "https://github.com/agriyakhetarpal/jupyterlite-pandoc-pdf-exporter/issues"
     },
-    "license": "BSD-3-Clause",
+    "license": "GPL-2.0-or-later",
     "author": {
         "name": "Agriya Khetarpal",
         "email": "agriyakhetarpal@outlook.com"
@@ -43,14 +43,7 @@
         "clean:lintcache": "rimraf .eslintcache",
         "clean:labextension": "rimraf jupyterlite_pandoc_pdf_exporter/labextension jupyterlite_pandoc_pdf_exporter/_version.py",
         "clean:all": "jlpm clean:lib && jlpm clean:labextension && jlpm clean:lintcache",
-        "eslint": "jlpm eslint:check --fix",
-        "eslint:check": "eslint . --cache --ext .ts,.tsx",
         "install:extension": "jlpm build",
-        "lint": "jlpm prettier && jlpm eslint",
-        "lint:check": "jlpm prettier:check && jlpm eslint:check",
-        "prettier": "jlpm prettier:base --write --list-different",
-        "prettier:base": "prettier \"**/*{.ts,.tsx,.js,.jsx,.css,.json,.md}\"",
-        "prettier:check": "jlpm prettier:base --check",
         "test": "jest --coverage",
         "watch": "run-p watch:src watch:labextension",
         "watch:src": "tsc -w --sourceMap",
