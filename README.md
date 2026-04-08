@@ -9,7 +9,7 @@ PDF exporter with [JupyterLite's `INbConvertExporters` interface](https://jupyte
 ## Usage
 
 - Install this extension in your JupyterLite deployment via `pip install jupyterlite-pdf-exporter` and rebuild your JupyterLite distribution.
-- Open a notebook in JupyterLite, click on the "File" menu, and select "Save and Export Notebook As" > "PDF (via Pandoc)". The PDF file will be downloaded to your local machine at a location of your choice.
+- Open a notebook in JupyterLite, click on the "File" menu, and select "Save and Export Notebook As" > "PDF". The PDF file will be downloaded to your local machine at a location of your choice.
 
 ## Requirements
 

@@ -22,7 +22,7 @@ const exporterPlugin: ServiceManagerPlugin<void> = {
   autoStart: true,
   requires: [INbConvertExporters],
   activate: (_: null, exporters: INbConvertExporters): void => {
-    exporters.register('PDF (via Pandoc)', new PdfExporter());
+    exporters.register('PDF', new PdfExporter());
   }
 };
 
