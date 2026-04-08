@@ -30,7 +30,7 @@ repos:
         language: node
         types_or: [ts, tsx, javascript, jsx]
   - repo: https://github.com/zizmorcore/zizmor-pre-commit
-    rev: b546b77c44c466a54a42af5499dcc0dcc1a3193f  # frozen: v1.22.0
+    rev: ea2eb407b4cbce87cf0d502f36578950494f5ac9  # frozen: v1.23.1
     hooks:
       - id: zizmor
         args: ['--pedantic', '--fix=all']
