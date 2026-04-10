@@ -1,11 +1,18 @@
 {
     "name": "jupyterlite-pdf-exporter",
     "version": "0.1.0",
-    "description": "A PDF exporter for JupyterLite based on a WebAssembly distribution of Pandoc",
+    "description": "A PDF exporter for JupyterLite based on WebAssembly distributions of Pandoc and Typst.",
     "keywords": [
         "jupyter",
         "jupyterlab",
-        "jupyterlab-extension"
+        "jupyterlite",
+        "jupyterlite-extension",
+        "pdf",
+        "exporter",
+        "pandoc",
+        "typst",
+        "wasm",
+        "webassembly"
     ],
     "homepage": "https://github.com/agriyakhetarpal/jupyterlite-pdf-exporter",
     "bugs": {
